@@ -27,3 +27,9 @@ console.table(colors);
 let firstColorRemoved = colors.shift();
 console.table(colors);
 console.log(firstColorRemoved);
+
+// call index to access the data without removing it
+// does not allow negative indecies to call from the end of an array - returns undefined
+let firstColor = colors[0];
+let lastColor = colors[-1];
+console.log(firstColor,lastColor);
