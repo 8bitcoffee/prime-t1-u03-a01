@@ -1,4 +1,6 @@
-console.log('Hello world!');
+console.log('JS loaded\n\n');
+
+console.log("ARRAY SECTION:\n");
 // string
 let firstName = 'J';
 // number
@@ -14,7 +16,7 @@ let sunny = true;
 let colors = ['orange','teal','green'];
 // .pop() removeds the last item in an array
 colors.pop();
-// console.table() logs out the data from an array with indecies
+// console.table() logs out the data from an array with indices
 console.table(colors);
 // .push() adds an item to the end of an array
 colors.push('blue','pink');
@@ -29,7 +31,43 @@ console.table(colors);
 console.log(firstColorRemoved);
 
 // call index to access the data without removing it
-// does not allow negative indecies to call from the end of an array - returns undefined
+// does not allow negative indices to call from the end of an array - returns undefined
 let firstColor = colors[0];
 let lastColor = colors[-1];
 console.log(firstColor,lastColor);
+
+// loops
+
+// "for-of" loops
+    // Loops over each item in an Array and assigns the value to 'item'.
+console.log("\nFOR-OF LOOP:");
+let colorList = document.querySelector('#color-list');
+for(let item of colors) {
+    // repeated for each item in the array
+    console.log('color:', item);
+    colorList.innerHTML += '<div>' + item + '</div>';
+}
+
+// Traditional "for" loop
+console.log("\nTRADITIONAL FOR LOOP:")
+let temperatureValues = [72,84,93,102];
+// start, end, increment are the parameters
+for(let index = 0; index < 4; index += 1){
+    console.log(index);
+}
+
+// Loop over all temperature values
+console.log("\nALL TEMP VALUES:");
+
+for (let i = 0; i < temperatureValues.length; i += 1){
+    let temp = temperatureValues[i];
+    console.log('temp: ', temp);
+}
+
+// "while" loops (least common type)
+console.log("\nWHILE LOOP:")
+let start = 0;
+while (start < 10) {
+    console.log(start);
+    start += 1; // increment
+}
