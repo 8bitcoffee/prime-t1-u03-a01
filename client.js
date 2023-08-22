@@ -1,6 +1,6 @@
-console.log('JS loaded\n\n');
+console.log('JS loaded');
 
-console.log("ARRAY SECTION:\n");
+console.log("\nARRAY SECTION:");
 // string
 let firstName = 'J';
 // number
@@ -70,4 +70,39 @@ let start = 0;
 while (start < 10) {
     console.log(start);
     start += 1; // increment
+}
+console.log("\nEXERCISE:")
+// Data you are provided: A list of all item values (cost of items)
+// Expected output: Total value of all items. Indication of whether
+// the fundraising goal has been achieved.
+
+// What variables and logic would you need for this?
+
+const fundraisingGoal = 20000; // Number
+const itemList = [100, 500, 2000, 50, 1000, 750, 5000, 5000]; // Array
+let currentTotal = 0; // Number
+let goalReached = false; // Boolean
+
+for (let item of itemList) {
+    currentTotal += item;
+    console.log(`For loop: item - ${item}, currentTotal - ${currentTotal}`);
+}
+console.log(`Final total: $${currentTotal}`);
+
+if (currentTotal >= fundraisingGoal){
+    goalReached = true;
+    console.log("GOAL REACHED!!!")
+}
+else {
+    console.log("GOAL NOT REACHED!")
+    console.log(`Remaining amount: $${fundraisingGoal-currentTotal}`);
+}
+
+//Display on the webspage whether goal has been reached
+let outputDiv = document.querySelector('#output');
+if (goalReached){
+    outputDiv.innerHTML = 'GOAL REACHED!!!';
+}
+else {
+    outputDiv.innerHTML = "GOAL NOT REACHED!" + '<br></br>' + `Remaining amount: $${fundraisingGoal-currentTotal}`;
 }
